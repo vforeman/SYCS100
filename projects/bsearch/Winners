@@ -48,6 +48,7 @@ def bsearch(List,item):#defines the function for binary search of an item in a l
             bottom=mid+1 #assigns the index of the element succeeding the mid to bottom
     else:
         return -1 #returns -1 if the search item is not found
+<<<<<<< HEAD
 
 
 # Tewodros Bejiga @02618567
@@ -103,6 +104,25 @@ def bsearch(pList,pFind):       #the function's arguments are a list and an elem
 
     
 
+
+
+
+#------------------------------------------------------------------------------
+
+# Ketema Desissa
+# @02594803
+def bsearch(N,target):
+    Low=0
+    High=len(N)-1        
+    while(Low<=High):
+        mid=(Low+High)/2        
+        if(N[mid]==target):
+                return mid
+        elif(N[mid]<target):
+            Low=mid+1            
+        elif(N[mid]>target):
+                 High=mid-1        
+    return -1
 
 
 

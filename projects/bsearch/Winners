@@ -70,3 +70,41 @@ def bsearch(list,target):
         
 
         
+
+def bsearch(pList,pFind):       #the function's arguments are a list and an element to be found
+    
+    pList.sort()        #first the list is sorted using the list class method sort()
+    
+    low=0               #the minimum value of the search range is initialied at 0
+    high=len(pList)-1   #and the max value is initialized at the last position in the list
+    
+    while(low<=high):           #the search will run up to and including a range of 1 element.
+                                #If the search element is not in the list at all then the max and
+                                #min value will be equal to the mean position and either the max or min
+                                #value will be assigned the position preceeding or suceeding the mean, respectively,
+                                #and the condition (low<=high) will be false and the loop will terminate
+        
+        mid=(low+high)/2        #at each iteration, the mean position of the range is found
+        
+        if(pList[mid]==pFind):     #if the search element is equal to the element at the mean position          
+            return mid             #then the mean position is returned
+            
+        elif(pList[mid]<pFind):    #if the search element is greater than the 
+             low=mid+1             #element at the mean position, then I reduce the search range by
+                                   #assigning the min value the position succeeding the mean position.
+                                   #suceeding, because I don't want to include the mean position in my next
+                                   #range because I has already been found not to be the element searched for
+                                   
+            
+        elif(pList[mid]>pFind):    #the last case handled is if the search element is smaller than the           
+            high=mid-1             #element at the mean position. In this case I reduce the search range by
+                                   #assigning the max value the position preceeding the mean position
+    
+    return -1                      #if the search loop terminates without finding the position of the search
+                                   #element then that means the element was not found in the list and -1 is returned
+
+    
+
+
+
+
